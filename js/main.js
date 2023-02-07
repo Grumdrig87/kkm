@@ -55,11 +55,122 @@ if (jQuery('[data-best]').length > 0) {
       infinite: true,
   });
 }
+if (jQuery('[data-progress]').length > 0) {
+  $('[data-progress]').slick({
+      dots: false,
+      arrows: true,
+      speed: 300,
+      slidesToShow: 4,
+      infinite: true,
+      variableWidth: true,
+  });
+}
+if (jQuery('[data-sert]').length > 0) {
+  $('[data-sert]').slick({
+      dots: false,
+      arrows: true,
+      speed: 300,
+      slidesToShow: 4,
+      infinite: true,
+  });
+}
+if (jQuery('[data-comp]').length > 0) {
+  $('[data-comp]').slick({
+      dots: false,
+      arrows: false,
+      speed: 300,
+      slidesToShow: 5,
+      variableWidth: true,
+      infinite: true,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+  });
+}
   //adaptive
   if ($(window).width() < 994) {
     closeBurger ();
   }
 
+//circle
+var numb = 1;
+$(window).scroll(function() {
+  if ($(window).scrollTop() + ($(window).height() / 2) >= $('.progress').offset().top && numb==1) {
+    $('.first').circleProgress({
+        value: 0.9,
+        size: 270.0,
+        fill: {
+          color: '#FFCC01'
+        },
+        thickness: 14,
+        startAngle: Math.PI / 4 * 2,
+        emptyFill: '#D9D9D9',
+    }).on('circle-animation-progress', function(event, progress) {
+      $(this).find('strong').html(parseInt(7 * progress));
+    });
+    $('.second').circleProgress({
+      value: 0.9,
+      size: 270.0,
+      fill: {
+        color: '#FFCC01'
+      },
+      thickness: 14,
+      startAngle: Math.PI / 4 * 0.5,
+      emptyFill: '#D9D9D9',
+  }).on('circle-animation-progress', function(event, progress) {
+    $(this).find('strong').html(parseInt(6 * progress));
+  });
+  $('.third').circleProgress({
+    value: 0.99,
+    size: 270.0,
+    fill: {
+      color: '#FFCC01'
+    },
+    thickness: 14,
+    startAngle: Math.PI / 4 * 2.5,
+    emptyFill: '#D9D9D9',
+}).on('circle-animation-progress', function(event, progress) {
+  $(this).find('strong').html(parseInt(49 * progress));
+});
+$('.fourth').circleProgress({
+  value: 0.94,
+  size: 270.0,
+  fill: {
+    color: '#FFCC01'
+  },
+  thickness: 14,
+  startAngle: Math.PI / 4 * 2.5,
+  emptyFill: '#D9D9D9',
+}).on('circle-animation-progress', function(event, progress) {
+$(this).find('strong').html('>' + parseInt(40 * progress) + '%');
+});
+$('.fifth').circleProgress({
+  value: 0.90,
+  size: 270.0,
+  fill: {
+    color: '#FFCC01'
+  },
+  thickness: 14,
+  startAngle: Math.PI / 4 * 1,
+  emptyFill: '#D9D9D9',
+}).on('circle-animation-progress', function(event, progress) {
+$(this).find('strong').html('>' + parseInt(180 * progress));
+});
+$('.sixth').circleProgress({
+value: 0.85,
+size: 270.0,
+fill: {
+  color: '#FFCC01'
+},
+thickness: 14,
+startAngle: Math.PI / 4 * 1,
+emptyFill: '#D9D9D9',
+}).on('circle-animation-progress', function(event, progress) {
+$(this).find('strong').text('>' + String((1.9 * progress).toFixed(1)));
+});
+    numb = 0;
+  }
+})
 
     
 })
