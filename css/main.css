@@ -861,3 +861,121 @@ input {
 	margin-bottom: 12px;
 	color: #272624;
 }
+
+/* --------------------footer---------------- */
+
+.footer__top {
+	padding: 35px 0 57px;
+	background: url('../img/footer-bg.png') no-repeat 0 0 / cover;
+	-webkit-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1), 0px -6px 20px rgba(0, 0, 0, 0.1);
+	   -moz-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1), 0px -6px 20px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1), 0px -6px 20px rgba(0, 0, 0, 0.1);
+}
+.footer__logo {
+	width: 23%;
+	max-width: 270px;
+}
+.footer__menu {
+	width: 23%;
+}
+.footer__menu ul {
+	-webkit-columns: 2;
+	   -moz-columns: 2;
+	        columns: 2;
+}
+.footer__menu ul li:not(:last-child) {
+	margin-bottom: 16px;
+}
+.footer__menu ul li a {
+	color: #272624;
+}
+.footer__contacts {
+	width: 23%;
+}
+.footer__contacts .contacts__info:not(:last-child) {
+	margin-bottom: 24px;
+}
+.footer__contacts .contacts__info a {
+	margin-bottom: 0;
+}
+.footer__soc {
+	width: 23%;
+}
+.footer__soc-top {
+	margin-bottom: 24px;
+}
+.footer__soc-link {
+	display: block;
+}
+.footer__soc-link:not(:last-child) {
+	margin-right: 12px;
+}
+.footer__soc-link:hover {
+	opacity: 0.8;
+	text-decoration: none;
+}
+.footer__soc .consult__item {
+	width: 100%;
+	padding: 0;
+}
+.footer__soc .consult__item:not(:last-child) {
+	margin-bottom: 24px;
+}
+.footer__bottom {
+	padding: 10px 0;
+	background: #272624;
+}
+.footer__bottom .container > * {
+	font-size: 14px;
+	line-height: 120%;
+	color: #FFFFFF;
+	opacity: 0.5;
+}
+.contacts svg,
+.footer svg {
+	color: #272624;
+}
+.header__cont svg {
+	color: #fff;
+}
+.header__cont a {
+	margin-bottom: 0;
+}
+.header__cont a,
+.header__cont span {
+	font-size: 14px;
+	line-height: 120%;
+	color: #FFFFFF;
+}
+.header__top {
+	background: #272624;
+	padding: 8px 0;
+}
+.header__cont .contacts__info:not(:last-child) {
+	margin-right: 24px;
+}
+.header__top-socwrap {
+	margin-right: 12px;
+}
+.header__top-socwrap a:not(:last-child) {
+	margin-right: 12px;
+}
+.header__top-socwrap a {
+	display: block;
+	max-height: 24px;
+}
+.header__btn {
+	display: -webkit-inline-box !important;
+	display: -webkit-inline-flex !important;
+	display: -moz-inline-box !important;
+	display: -ms-inline-flexbox !important;
+	display: inline-flex !important;
+	border: none;
+	padding: 12px 14px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 120%;
+}
+.header__btn svg {
+	margin-right: 12px;
+}
