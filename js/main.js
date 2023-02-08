@@ -1,9 +1,6 @@
 jQuery(document).ready(function($) {
   
   
-  if ($(window).width() > 768) {
-      
-    }
 
   if (jQuery('[data-hover]').length > 0) {
     $('[data-hover]').on('mouseenter',function(){
@@ -15,13 +12,7 @@ jQuery(document).ready(function($) {
       $(this).find('[data-btn]').slideUp(0);
     })
   }
-  // burger
-  // $('[data-burger]').click(function() {
-  //     $('html').toggleClass("open");
-  //     $(this).toggleClass("open");
-  //     $('[data-nav]').toggleClass("open");
-  //     $('body').toggleClass('open');
-  // });
+  
   
   //miss click burger
   function closeBurger () {
@@ -44,27 +35,16 @@ jQuery(document).ready(function($) {
         speed: 300,
         slidesToShow: 1,
         infinite: true,
+        responsive: [{
+          breakpoint: 994,
+          settings: {
+            dots: false
+          }
+        } ]
     });
 }
-if (jQuery('[data-best]').length > 0) {
-  $('[data-best]').slick({
-      dots: false,
-      arrows: true,
-      speed: 300,
-      slidesToShow: 6,
-      infinite: true,
-  });
-}
-if (jQuery('[data-progress]').length > 0) {
-  $('[data-progress]').slick({
-      dots: false,
-      arrows: true,
-      speed: 300,
-      slidesToShow: 4,
-      infinite: true,
-      variableWidth: true,
-  });
-}
+
+
 if (jQuery('[data-sert]').length > 0) {
   $('[data-sert]').slick({
       dots: false,
@@ -72,6 +52,17 @@ if (jQuery('[data-sert]').length > 0) {
       speed: 300,
       slidesToShow: 4,
       infinite: true,
+      responsive: [{
+        breakpoint: 994,
+        settings: {
+          slidesToShow: 3,
+        }
+      },{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      } ]
   });
 }
 if (jQuery('[data-comp]').length > 0) {
@@ -90,87 +81,90 @@ if (jQuery('[data-comp]').length > 0) {
   //adaptive
   if ($(window).width() < 994) {
     closeBurger ();
-  }
-
-//circle
-var numb = 1;
-$(window).scroll(function() {
-  if ($(window).scrollTop() + ($(window).height() / 2) >= $('.progress').offset().top && numb==1) {
-    $('.first').circleProgress({
-        value: 0.9,
-        size: 270.0,
-        fill: {
-          color: '#FFCC01'
-        },
-        thickness: 14,
-        startAngle: Math.PI / 4 * 2,
-        emptyFill: '#D9D9D9',
-    }).on('circle-animation-progress', function(event, progress) {
-      $(this).find('strong').html(parseInt(7 * progress));
+    $('[data-icons]').appendTo('[data-nav]');
+    // burger
+      $('[data-burger]').click(function() {
+        $('html').toggleClass("open");
+        $(this).toggleClass("open");
+        $('[data-nav]').toggleClass("open");
+        $('body').toggleClass('open');
     });
-    $('.second').circleProgress({
-      value: 0.9,
-      size: 270.0,
-      fill: {
-        color: '#FFCC01'
-      },
-      thickness: 14,
-      startAngle: Math.PI / 4 * 0.5,
-      emptyFill: '#D9D9D9',
-  }).on('circle-animation-progress', function(event, progress) {
-    $(this).find('strong').html(parseInt(6 * progress));
-  });
-  $('.third').circleProgress({
-    value: 0.99,
-    size: 270.0,
-    fill: {
-      color: '#FFCC01'
-    },
-    thickness: 14,
-    startAngle: Math.PI / 4 * 2.5,
-    emptyFill: '#D9D9D9',
-}).on('circle-animation-progress', function(event, progress) {
-  $(this).find('strong').html(parseInt(49 * progress));
-});
-$('.fourth').circleProgress({
-  value: 0.94,
-  size: 270.0,
-  fill: {
-    color: '#FFCC01'
-  },
-  thickness: 14,
-  startAngle: Math.PI / 4 * 2.5,
-  emptyFill: '#D9D9D9',
-}).on('circle-animation-progress', function(event, progress) {
-$(this).find('strong').html('>' + parseInt(40 * progress) + '%');
-});
-$('.fifth').circleProgress({
-  value: 0.90,
-  size: 270.0,
-  fill: {
-    color: '#FFCC01'
-  },
-  thickness: 14,
-  startAngle: Math.PI / 4 * 1,
-  emptyFill: '#D9D9D9',
-}).on('circle-animation-progress', function(event, progress) {
-$(this).find('strong').html('>' + parseInt(180 * progress));
-});
-$('.sixth').circleProgress({
-value: 0.85,
-size: 270.0,
-fill: {
-  color: '#FFCC01'
-},
-thickness: 14,
-startAngle: Math.PI / 4 * 1,
-emptyFill: '#D9D9D9',
-}).on('circle-animation-progress', function(event, progress) {
-$(this).find('strong').text('>' + String((1.9 * progress).toFixed(1)));
-});
-    numb = 0;
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 0) {
+          $('.header__bottom').addClass('scroll')
+      } else {
+        $('.header__bottom').removeClass('scroll')
+      }
+    })
   }
-})
+  if ($(window).width() > 993) {
+    // burger
+    $('[data-burger]').click(function() {
+      $('html').toggleClass("open");
+      $(this).toggleClass("open");
+      $('[data-menu]').toggleClass("open");
+      $('[data-menu]').slideToggle(300);
+      // $('body').toggleClass('open');
+  });
+  }
+  if ($(window).width() > 768) {
+    if (jQuery('[data-best]').length > 0) {
+      $('[data-best]').slick({
+          dots: false,
+          arrows: true,
+          speed: 300,
+          slidesToShow: 6,
+          infinite: true,
+          responsive: [{
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 5,
+            }
+          },{
+            breakpoint: 994,
+            settings: {
+              slidesToShow: 4,
+            }
+          }, ]
+      });
+    }
+    if (jQuery('[data-progress]').length > 0) {
+      $('[data-progress]').slick({
+          dots: false,
+          arrows: true,
+          speed: 300,
+          slidesToShow: 4,
+          infinite: true,
+          variableWidth: true,
+          responsive: [{
+            breakpoint: 1200,
+            settings: {
+              variableWidth: false,
+              slidesToShow: 3,
+            }
+          },{
+            breakpoint: 994,
+            settings: {
+              variableWidth: false,
+              slidesToShow: 2,
+            }
+          } ]
+      });
+    }
+  }
 
+// showmore
+// $("[data-revtxt]").shorten({
+//   "showChars" : 420,
+//   "moreText"  : "Читать дальше",
+//   "lessText"  : "Скрыть",
+// });
+// slide to id
+$('[data-scroll]').on("click", function (event) {
+  event.preventDefault();
+  var id  = $(this).attr('href'),
+      top = $(id).offset().top;
+  $('body,html').animate({scrollTop: top}, 1500);
+});
     
 })
