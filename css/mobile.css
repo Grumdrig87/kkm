@@ -277,6 +277,7 @@
 }
 .footer__mob {
   display: block;
+  padding-top: 13px;
   background: rgba(247, 247, 247, 0.8);
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
@@ -538,7 +539,12 @@
   left: 0;
   width: 100%;
 }
-
+.footer {
+  padding-top: 132px;
+}
+.footer.stop {
+  padding-top: 0;
+}
 .footer__mob.stop {
   position: static;
 }

@@ -1,10 +1,5 @@
 jQuery(document).ready(function($) {
   
-  
-
-  
-  
-  
   //miss click burger
   function closeBurger () {
     $(document).mouseup(function (e){ // событие клика по веб-документу
@@ -96,11 +91,16 @@ if (jQuery('[data-comp]').length > 0) {
       "moreText"  : "Читать дальше",
       "lessText"  : "Скрыть",
     });
+    var fbot = $('.footer__bottom').offset().top;
     $(window).scroll(function() {
-      if ($(window).scrollTop() + $(window).height() >= $('.footer').offset().top) {
-        $('[data-fmob]').addClass('stop')
+      console.log(fbot);
+      console.log($(window).scrollTop() + $(window).height())
+      if ($(window).scrollTop() + $(window).height() >= fbot) {
+        $('[data-fmob]').addClass('stop');
+        $('.footer').addClass('stop');
       } else {
         $('[data-fmob]').removeClass('stop')
+        $('.footer').removeClass('stop')
       }
     })
   }
@@ -161,7 +161,7 @@ if (jQuery('[data-comp]').length > 0) {
     if (jQuery('[data-hover]').length > 0) {
       $('[data-hover]').on('mouseenter',function(){
         $(this).addClass('open');
-        $(this).find('[data-btn]').slideDown(200);
+        $(this).find('[data-btn]').slideDown(0);
       })
       $('[data-hover]').on('mouseleave',function(){
         $(this).removeClass('open');
